@@ -1,0 +1,4 @@
+name = Activity log
+description = Activity log module for bbd.
+package = Custom
+core = 7.x

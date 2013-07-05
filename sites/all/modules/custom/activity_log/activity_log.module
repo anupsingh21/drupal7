@@ -1,0 +1,41 @@
+<?php
+/*
+ * helper function
+ */
+
+function sm($var){
+  if(is_array($var) || is_object($var)){
+    drupal_set_message('<pre>' . print_r($var,1) . '</pre>');   
+  }
+  else{
+    drupal_set_message($var);
+  }   
+}
+/**
+ *  Implements hook_menu
+ */
+
+function activity_log_menu(){
+  $items['activity/log'] = array(
+    'title' => 'Activity log message',
+    'page callback' => 'activity_log_calback',
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+/*
+ *  callback function to create a log for the activity
+ *  $log_array = array('franchisee' => '','customer' => '','body' => '','type' => '', 'order_id' => '')
+ */
+function activity_log_calback(){
+  sm(user_authenticate('anup','anup'));
+  return "hello";
+}
+
+
+
+
+
+
+
