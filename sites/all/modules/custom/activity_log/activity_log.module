@@ -9,13 +9,14 @@ function sm($var){
   }
   else{
     drupal_set_message($var);
+    
   }   
 }
 /**
  *  Implements hook_menu
  */
 
-function activity_log_menu(){
+function activity_log_menu(){    
   $items['activity/log'] = array(
     'title' => 'Activity log message',
     'page callback' => 'activity_log_calback',
